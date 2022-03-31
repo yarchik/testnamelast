@@ -1,0 +1,97 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text {
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+}
+
+
+.--uppercase {
+  text-transform: uppercase;
+}
+
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Gilroy', sans-serif;
+}
+
+
+.heading-1 {
+  @include fontSize(52, 90);
+  line-height: 1;
+}
+
+.heading-2 {
+  font-size: 52px;
+  line-height: 56px;
+  @media (max-width: $breakpoint-md) {
+    line-height: 1;
+  }
+}
+
+.heading-3 {
+  @include fontSize(24, 36);
+  line-height: 1;
+  @media (max-width: $breakpoint-md) {
+    line-height: 1.16;
+  }
+}
+
+.heading-4 {
+  @include fontSize(18, 24);
+  line-height: 1.2;
+}
+
+.heading-5 {
+  @include fontSize(16, 20);
+}
+
+.heading-6 {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+.icon-ar-left:before {
+  content: "\e901";
+}
+.icon-ar-right:before {
+  content: "\e902";
+}
+.icon-ar-bot:before {
+  content: "\e900";
+}
+.icon-cart:before {
+  content: "\e903";
+}
+.icon-check:before {
+  content: "\e904";
+}
+.icon-dots-menu:before {
+  content: "\e905";
+}
+.icon-filter:before {
+  content: "\e906";
+}
+.icon-message:before {
+  content: "\e907";
+}
+.icon-placeholder:before {
+  content: "\e908";
+}
+.icon-star:before {
+  content: "\e909";
+}
+.icon-user:before {
+  content: "\e90a";
+}

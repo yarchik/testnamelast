@@ -1,0 +1,61 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-contacts {
+  position: relative;
+  &__inner {
+    padding: 50px 0;
+    position: relative;
+    @media (max-width: $breakpoint-md) {
+      padding: 20px 0 35px 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -30px;
+      width: 60vw;
+      height: 100%;
+      background-color: $accentColor;
+      z-index: -1;
+      @media (max-width: $breakpoint-lg) {
+        width: calc(100% + 30px);
+        left: -15px;
+        right: -15px;
+      }
+    }
+  }
+  &__map {
+    height: 100%;
+    width: calc(55vw + 30px);
+    margin-left: -15px;
+    @media (max-width: $breakpoint-md) {
+      height: 500px;
+      margin-top:34px;
+      margin-left: -15px;
+      width: calc(100% + 30px);
+    }
+  }
+  &-form {
+    width: 100%;
+    max-width: 310px;
+    margin: 0 auto;
+    &__title {
+      @include fontSize(24, 29);
+      color: $whiteColor;
+      max-width: 480px;
+      margin: 0 auto 17px auto;
+      @media (max-width: $breakpoint-md) {
+        max-width: 400px;
+        margin-bottom: 21px;
+      }
+    }
+  }
+  .contacts-list {
+    text-align: center;
+    &:not(.contacts-list:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+}

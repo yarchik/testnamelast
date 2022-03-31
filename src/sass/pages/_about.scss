@@ -1,0 +1,118 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-introduce {
+  margin-bottom: 64px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 30px;
+  }
+
+  .section {
+    &-heading {
+      margin-bottom: 20px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 16px;
+      }
+    }
+
+    &-text {
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__reverse {
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    max-height: 360px;
+  }
+
+}
+
+.s-square {
+  padding: 48px 0;
+  margin-bottom: 64px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 30px;
+  }
+
+  & .section {
+    &-heading {
+      color: #7B5136;
+      width: 80%;
+      margin: 0 auto 36px auto;
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__inner {
+    background-color: $whiteColor;
+    padding: 68px;
+    @media (max-width: $breakpoint-md) {
+      padding: 45px 20px;
+    }
+  }
+
+  &__item {
+    font-weight: 400;
+    @include fontSize(14, 16);
+    line-height: 1.375;
+    color: #323334;
+    padding-left: 50px;
+    position: relative;
+    @media (max-width: $breakpoint-md) {
+      padding-left: 40px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 32px;
+      }
+    }
+
+    & span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+      background-color: $accentColor;
+      border-radius: 100%;
+
+      width: 22px;
+      height: 22px;
+      margin-right: 28px;
+      @media (max-width: $breakpoint-md) {
+        width: 20px;
+        height: 20px;
+        margin-right: 17px;
+      }
+
+      & i {
+        font-size: 10px;
+        color: $whiteColor
+      }
+    }
+  }
+}

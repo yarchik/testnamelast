@@ -1,0 +1,183 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+body, html {
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body .hide-scrollbar, html .hide-scrollbar {
+  scrollbar-width: none
+}
+
+body .hide-scrollbar::-webkit-scrollbar, html .hide-scrollbar::-webkit-scrollbar {
+  display: none
+}
+
+
+img::selection {
+  background-color: transparent;
+}
+
+.default-icon {
+  width: 100%;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.--relative {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.overlap {
+  position: relative;
+  z-index: 3;
+}
+
+body {
+  &.overflow-hidden {
+    padding-left: calc(100vw - 100%);
+    overflow: hidden;
+
+  }
+}
+
+
+.full-height, body, html {
+  height: 100%;
+}
+
+.body-padding {
+  height: 194px;
+  @media (max-width: $breakpoint-md) {
+    height: 52px;
+  }
+}
+
+.section {
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: $breakpoint-md) {
+
+  }
+
+  &-heading {
+    font-weight: bold;
+    @include fontSize(20, 28);
+    line-height: 1.2;
+    color: $primaryColor;
+    margin-bottom: 10px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &-text {
+    @include fontSize(14, 16);
+    font-weight: 400;
+    line-height: 1.375;
+    color: $primaryColor;
+  }
+
+  &-wrap {
+    background-color: #2E3050;
+    border-radius: 4px;;
+    @media (max-width: $breakpoint-md) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+
+  &-inner {
+    position: relative;
+    padding: 0 0 102px 0;
+    overflow: hidden;
+  }
+
+
+  & .swiper {
+    &-button {
+      &-prev, &-next {
+        &:after {
+          content: '';
+          display: none;
+        }
+
+
+        &:hover {
+
+        }
+      }
+    }
+
+    &-pagination {
+      position: relative;
+    //  @include fontSize(24, 36);
+      letter-spacing: 0.065em;
+      color: #C19600;
+      line-height: 1;
+      width: 100%;
+      text-align: center;
+      //padding: 34px 10px;
+      z-index: 1;
+      bottom: 0;
+      @media (max-width: $breakpoint-md) {
+       // padding: 11px 10px;
+      }
+
+      &-current {
+        @include fontSize(24, 36);
+        font-weight: bold;
+      }
+
+      &-bullet {
+        width: 6.25px;
+        height: 6.25px;
+        margin: 0 2.5px!important;
+        background-color: $whiteColor!important;
+        opacity: 1!important;
+        &-active{
+          background-color: $accentColor!important;
+        }
+      }
+    }
+  }
+}
+
+
+.main {
+  overflow: hidden;
+  padding-top: 200px;
+  @media (max-width: $breakpoint-md) {
+    padding-top: 60px;
+  }
+  &-wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+  }
+}
+

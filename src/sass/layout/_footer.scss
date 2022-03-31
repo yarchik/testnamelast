@@ -1,0 +1,196 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.footer {
+  background-color: $primaryColor;
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+  }
+
+  &__content {
+    padding: 50px 0 95px 0;
+  }
+
+  &-item {
+    margin-top: 46px;
+    @media (max-width: $breakpoint-md) {
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: $whiteColor;
+
+      margin-bottom: 34px;
+    }
+  }
+
+  .menu {
+    & li {
+      &:not(&:last-child) {
+        margin-bottom: 16px;
+      }
+
+      & a {
+        color: $whiteColor;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        @media (max-width: $breakpoint-lg) {
+        }
+        @include transition(.3);
+
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+
+  .company {
+    &-name, &-description {
+      margin-bottom: 40px;
+    }
+
+    &-name {
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 34px;
+      color: $whiteColor;
+      @media (max-width: $breakpoint-lg) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &-description {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: rgba(255, 255, 255, 0.5);
+      @media (max-width: $breakpoint-lg) {
+        margin-bottom: 38px;
+      }
+    }
+  }
+
+  .social-list {
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.copyright {
+  background-color: #222222;
+  padding: 18px 0;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.7);
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+  }
+}
+
+.contacts {
+  &-list {
+    padding: 0;
+
+    &:not(&:last-child) {
+      margin-bottom: 8px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 10px;
+      }
+    }
+
+    & li, & a {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.05em;
+      color: $whiteColor;
+    }
+
+    & li {
+      &:not(&:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+    & a {
+      @include transition(.3);
+
+      &:hover {
+        color: $accentColor;
+      }
+    }
+  }
+}
+
+.top-link {
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: .25em;
+  width: 54px;
+  height: 54px;
+  background-color: $whiteColor;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  img {
+
+  }
+
+  &:hover {
+   
+  }
+}
+
+// Text meant only for screen readers.
+.screen-reader-text {
+  position: absolute;
+  clip-path: inset(50%);
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
+  clip: rect(1px, 1px, 1px, 1px);
+
+  &:focus {
+    display: block;
+    top: 5px;
+    left: 5px;
+    z-index: 100000; // Above WP toolbar
+    clip-path: none;
+    background-color: #eee;
+    padding: 15px 23px 14px;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    line-height: normal;
+    color: #444;
+    font-size: 1em;
+    clip: auto !important;
+  }
+}
